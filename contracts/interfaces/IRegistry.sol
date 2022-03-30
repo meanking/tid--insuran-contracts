@@ -1,0 +1,36 @@
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.0;
+
+interface IRegistry {
+
+    function PERCENTAGE_BASE() external pure returns(uint256);
+    function UTILIZATION_BASE() external pure returns(uint256);
+    function PREMIUM_BASE() external pure returns(uint256);
+    function UNIT_PER_SHARE() external pure returns(uint256);
+
+    function timeExtra() external view returns(uint256);
+
+    function buyer() external view returns(address);
+    function seller() external view returns(address);
+    function guarantor() external view returns(address);
+    function staking() external view returns(address);
+    function bonus() external view returns(address);
+
+    function unoToken() external view returns(address);
+    function baseToken() external view returns(address);
+    function assetManager() external view returns(address);
+    function premiumCalculator() external view returns(address);
+    function platform() external view returns(address);
+
+    function guarantorPercentage() external view returns(uint256);
+    function platformPercentage() external view returns(uint256);
+
+    function depositPaused() external view returns(bool);
+
+    function stakingWithdrawWaitTime() external view returns(uint256);
+
+    function governor() external view returns(address);
+    function committee() external view returns(address);
+
+    function trustedForwarder() external view returns(address);
+}
